@@ -46,6 +46,8 @@ const tabsAppender = (selector) => {
     .finally(() => {
       console.log("all done")
     })
+  
+    
 }
 
 export { Tabs, tabsAppender }
