@@ -51,8 +51,12 @@ const Card = (article) => {
 
   card.addEventListener('click', printEventListener);
 
+ 
+
   return card 
 }
+
+
 
 const cardAppender = (selector) => {
   // TASK 6
@@ -67,7 +71,7 @@ const cardAppender = (selector) => {
   
   axios.get("https://lambda-times-api.herokuapp.com/articles")
     .then((response) => {
-      document.querySelector(selector).appendChild(Card(response.data.articles))  
+      console.log(response.data.articles)  
     })
     .catch((err) => {
       console.log("ERROR")
