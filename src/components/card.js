@@ -51,9 +51,6 @@ const Card = (article) => {
 
   card.addEventListener('click', printEventListener);
 
-  const cardsContainer = document.querySelector(".cards-container")
-  cardsContainer.appendChild(card)
-
   return card 
 }
 
@@ -68,12 +65,11 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
-  
+  const cards = document.querySelector(".cards-container")
   
   axios.get("https://lambda-times-api.herokuapp.com/articles")
     .then((response) => {
-      console.log(response.data.articles)
-        
+      console.log(response.data.articles) 
     })
     .catch((err) => {
       console.log("ERROR")
